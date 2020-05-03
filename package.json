@@ -1,0 +1,38 @@
+{
+  "name": "hederaresttemplatesjs",
+  "version": "1.0.0",
+  "description": "Rest API templates using hashsdk from Hedera Hashgraph",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sangatdas/HederaRestTemplatesJS.git"
+  },
+  "keywords": [
+    "Hedera",
+    "Hashgraph",
+    "hashgraph-sdk",
+    "Blockchain",
+    "Node",
+    "Javascript"
+  ],
+  "author": "Sangat Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sangatdas/HederaRestTemplatesJS/issues"
+  },
+  "homepage": "https://github.com/Sangatdas/HederaRestTemplatesJS#readme",
+  "dependencies": {
+    "@hashgraph/sdk": "^1.1.11",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "log4js": "^6.2.1",
+    "nodemon": "^2.0.3"
+  }
+}
