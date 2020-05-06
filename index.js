@@ -80,6 +80,38 @@ app.post('/getFile', async function(req, res) {
     res.send(client);
 });
 
+app.post('/appendFile', async function(req, res) {
+
+    logger.debug("Request received from Client:");
+    logger.info("Request Body: " + JSON.stringify(req.body));
+    logger.info("Request Query: " + JSON.stringify(req.query));
+
+    var client = await File.appendFile(req, operatorAccount, operatorPrivateKey);
+
+    res.send(client);
+});
+
+app.post('/getFileInfo', async function(req, res) {
+
+    logger.debug("Request received from Client:");
+    logger.info("Request Body: " + JSON.stringify(req.body));
+    logger.info("Request Query: " + JSON.stringify(req.query));
+
+    var client = await File.getFileInfo(req, operatorAccount, operatorPrivateKey);
+
+    res.send(client);
+});
+
+app.post('/deleteFile', async function(req, res) {
+
+    logger.debug("Request received from Client:");
+    logger.info("Request Body: " + JSON.stringify(req.body));
+    logger.info("Request Query: " + JSON.stringify(req.query));
+
+    var client = await File.deleteFile(req, operatorAccount, operatorPrivateKey);
+
+    res.send(client);
+});
 
 app.listen(port, function() {
     logger.info("Server started on port " + port);
