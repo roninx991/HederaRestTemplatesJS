@@ -25,7 +25,7 @@ const logger = log4js.getLogger("app");
 // API Imports
 const createClient = require('./Client');
 const getKey = require('./GenerateKey');
-const getFileContents = require('./File');
+const File = require('./File');
 
 // Server Constants
 const app = express();
@@ -58,13 +58,24 @@ app.get('/getKey', async function(req, res) {
     res.send(key);
 });
 
-app.post('/getFileContents', async function(req, res) {
+app.post('/createFile', async function(req, res) {
 
     logger.debug("Request received from Client:");
     logger.info("Request Body: " + JSON.stringify(req.body));
     logger.info("Request Query: " + JSON.stringify(req.query));
 
-    var client = await getFileContents(req, operatorAccount, operatorPrivateKey);
+    var client = await File.createFile(req, operatorAccount, operatorPrivateKey);
+
+    res.send(client);
+});
+
+app.post('/getFile', async function(req, res) {
+
+    logger.debug("Request received from Client:");
+    logger.info("Request Body: " + JSON.stringify(req.body));
+    logger.info("Request Query: " + JSON.stringify(req.query));
+
+    var client = await File.getFile(req, operatorAccount, operatorPrivateKey);
 
     res.send(client);
 });
